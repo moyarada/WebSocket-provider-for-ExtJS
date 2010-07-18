@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>WaterSpout Server</title>
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta name="KEYWORDS" content="waterspout, server, php, websockets, javascript, html5, polling, realtime, ajax, http" />
+	<meta name="DESCRIPTION" content="WaterSpout - realtime communication server" />
+	<meta name="ABSTRACT" content="WaterSpout - realtime communication server" />
+	<meta name="robots" content="index,follow" />
+	<meta name="REVISIT-AFTER" content="3 days" />
+	<meta name="rating" content="General" />
+	<meta name="resource-type" content="document" />
+	<meta name="distribution" content="global" />
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+	<link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+	<link rel="stylesheet" type="text/css" href="/style.css" />
+</head>
+<body>
+	<div id="logo">
+		<div>
+			<h1>WaterSpout Server</h1>
+			<p>Realtime Communication Server</p>
+		</div>
+	</div>
+
+	<p id="links">
+		<a href="http://code.google.com/p/waterspout/">Project Page</a>
+		<a href="http://code.google.com/p/waterspout/wiki/GettingStarted">Getting Started</a>
+		<a href="http://twitter.com/spoutserver">Follow Us</a>
+	</p>
+	
+	<div id="description">
+		<div>
+			WaterSpout is a lightweight web server capable of handling <a href="http://dev.w3.org/html5/websockets/">WebSocket requests</a>. When used as part of an event-driven server pair, 
+			WaterSpout enables real-time communication between the user's browser and the server using <a href="http://www.whatwg.org/specs/web-socket-protocol/">WebSockets</a> or long polling.
+			The reduced overhead as well as the specialized nature of the code running on the WaterSpout server make for extremely efficient communications between the user and the server. 
+		</div>
+	</div>
+	
+	<div id="demos">
+		<h3>Demos</h3>
+		<h4><a href="/demos/locke">John Locke</a></h4>
+		<p>The John Locke demo is a chat room application with a game-like interface. Users can chat and walk around the game screen. Movements from all users are kept synchronized so that all users have the same view of the game at the same time. This demo showcases WaterSpout's ability to provide real-time communication using WebSockets and falling back to long polling when necessary.</p>
+		
+		<h4><a href="/demos/compare">Efficiency Comparison</a></h4>
+		<p>The efficiency comparison demo is designed to highlight the user experience and efficiency benefits of different communication techniques. The demo makes calls to a server using three different connection methods, short polling, long polling and WebSockets. The amount of data transfered as well as a request counter are shown for each method. The benefits of WebSockets over the two polling techniques become much more clear when you can see the amount of overhead and the user experience lag inherent in polling.</p>
+	</div>
+	
+	<p><a href="http://www.phpconference.com/"><img src="/images/ipc10s_button_speaker_en.jpg" /></a></p>
+	
+	<p id="footer">
+		Powered By<br />
+		<a href="http://www.spoutserver.com/"><img src="/images/poweredby.png" alt="Powered By WaterSpout Server v1" title="Powered By WaterSpout Server" /></a>
+	</p>
+
+	<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-326069-3']);
+	_gaq.push(['_setDomainName', '.spoutserver.com']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	</script>
+</body>
+</html>
