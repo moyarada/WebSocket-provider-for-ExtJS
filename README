@@ -1,3 +1,60 @@
 WebSocket ExtJs Provider
 
+-- Overview -- 
 
+-- Installation --
+1. Include ExtJs lib
+    <link rel="stylesheet" type="text/css" href="/extjs/resources/css/ext-all-notheme.css"/> 
+    <script type="text/javascript" src="/extjs/ext-base-debug.js"></script> 
+    <script type="text/javascript" src="/extjs/ext-all-debug.js"></script>
+
+2. Include WebSocket Provider
+
+    <script type="text/javascript" src="/extjs/socketprovider.js"></script>
+
+3. Include Ext.Direct actions description
+
+    <script type="text/javascript" src="/api/api.php"></script>
+
+Note: Standard Ext.Direct stack was modified, you can find updated version in /lib/ext-direct-php
+
+In api.php you must configure it
+
+    require_once('ext-direct-php/ExtDirect/API.php');
+    require_once('ext-direct-php/ExtDirect/CacheProvider.php');
+    $api = new ExtDirect_API();
+
+    // Specify WebSocket endpoint here
+    $api->setRouterUrl('ws://localhost:7777/grid/updates'); // relevant for example grid.
+    $api->setTransportType('socket');
+    $api->setNamespace('MR.direct'); // Speciafy namespace for your actions
+    $api->setDescriptor('Ext.direct.WSOCKET_API'); // Name for this provider, will be used in Ext.Direct.addProvider()
+    $api->setDefaults(array(
+        'autoInclude' => true,
+        'basePath' => dirname(__FILE__).'/../../application/services' // path to services folder
+    ));
+
+    $api->add(
+        array(
+            'DataService' // Service class to use
+    ));
+    $api->output();
+
+4. Set provider
+    <script type="text/javascript">
+        Ext.Direct.addProvider(Ext.direct.WSOCKET_API);
+    </script>
+
+5. Start WebSocket server
+Example websocket server supplied in /server. It's configured listen on port 7777.
+
+Start 
+# php server.php
+
+Default log file is written to /tmp/waterspout
+
+-- Examples --
+--- Grid ---
+Located in /examples/grid
+Simple grid pulls data from server.
+Point DocumentRoot to grid/public

@@ -30,7 +30,7 @@ set_include_path(implode(PATH_SEPARATOR, array(
       
     <script type="text/javascript">
     
-    Ext.Direct.addProvider(MR.direct.REMOTING_API);
+    Ext.Direct.addProvider(Ext.direct.WSOCKET_API);
     
     Ext.Direct.on('message', function(e){
        MR.logger.log('Message received',e);

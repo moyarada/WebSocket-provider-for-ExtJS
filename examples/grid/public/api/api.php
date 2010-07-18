@@ -22,7 +22,7 @@ $api->setRouterUrl('ws://localhost:7777/grid/updates'); // default
 $api->setTransportType('socket');
 //$api->setCacheProvider($cache);
 $api->setNamespace('MR.direct');
-$api->setDescriptor('MR.direct.REMOTING_API');
+$api->setDescriptor('Ext.direct.WSOCKET_API');
 $api->setDefaults(array(
     'autoInclude' => true,
     'basePath' => dirname(__FILE__).'/../../application/services'
